@@ -17,6 +17,7 @@ Bundle 'gmarik/vundle'
 Bundle 'Valloric/YouCompleteMe'
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
+let g:ctrlp_max_files = 0
 
 "Vim Settings
 "============================================================================================================
@@ -35,7 +36,7 @@ colorscheme slate
 
 :set nowrap          "Turn off line wrap
 :set number          "Show Line numbers
-:set dir=~/bin/swp   "The swap files are all stored in the specific directory
+:set dir=~/swp   "The swap files are all stored in the specific directory
 
 
 "Ignore the following directories
