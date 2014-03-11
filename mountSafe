@@ -1,0 +1,4 @@
+#!/bin/bash
+encfs /home/peter/.safe_encfs/ /home/peter/safe
+
+
