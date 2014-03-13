@@ -1,0 +1,14 @@
+➜  chef-repo git:(master) ✗ knife configure --initial
+Overwrite /home/peter/.chef/knife.rb? (Y/N) Y
+Please enter the chef server URL: [https://blackbox:443] https://ec2-54-205-81-47.compute-1.amazonaws.com:443
+Please enter a name for the new user: [peter] newuser
+Please enter the existing admin name: [admin]       
+Please enter the location of the existing admin's private key: [/etc/chef-server/admin.pem] /home/peter/projects/chef-repo/.chef/admin.pem
+Please enter the validation clientname: [chef-validator] 
+Please enter the location of the validation key: [/etc/chef-server/chef-validator.pem] /home/peter/projects/chef-repo/.chef/chef-validator.pem
+Please enter the path to a chef repository (or leave blank): 
+Creating initial API user...
+Please enter a password for the new user: 
+Created user[newuser]
+Configuration file written to /home/peter/.chef/knife.rb
+
