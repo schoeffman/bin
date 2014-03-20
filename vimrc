@@ -85,6 +85,8 @@ let html_no_rendering=1 " Disable underlining of tabs in HTML documents.
 "This should be for the grep plugin that I don't have working yet
 map <Leader>f :Ack --ignore-dir=cache --ignore-dir=target -i 
 
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+
 "Mapped Keys
 "===========================================================================================================
 
