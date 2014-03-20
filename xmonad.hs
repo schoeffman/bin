@@ -75,9 +75,9 @@ myKeys = [
     ((mod4Mask .|. shiftMask, xK_m), spawn "mysql-workbench"),
     ((mod4Mask .|. shiftMask, xK_d), spawn "gthumb"),
     ((mod4Mask .|. shiftMask, xK_equal), spawn "xzoom -mag 10"),
-    -- listen to specific hardware buttons
-    ((mod4Mask, xK_F2), spawn "amixer set Master 2-"),
-    ((mod4Mask, xK_F3), spawn "amixer set Master 2+"),
+    -- listen to specific hardware buttons super f1,f2,f3
+    ((mod4Mask, xK_F2), spawn "amixer set Master 5-"),
+    ((mod4Mask, xK_F3), spawn "amixer set Master 5+"),
     ((mod4Mask, xK_F1), spawn "amixer -D pulse set Master toggle"),
     -- kill and copy windows
     ((mod4Mask .|. shiftMask, xK_c), kill1),
@@ -106,6 +106,7 @@ myStartup :: X ()
 myStartup = do
     setWMName "Main"
     spawnOn "1" "google-chrome"
+    spawnOn "1" myTerminal
     spawnOn "1" myTerminal
     spawnOn "2" "davmail"
     spawnOn "2" "thunderbird"
