@@ -1,3 +1,4 @@
+" This must be first, because it changes other options as a side effect
 set nocompatible               " be iMproved
 filetype off                   " required!
 set rtp+=~/.vim/bundle/vundle/
@@ -26,8 +27,32 @@ syntax on
 filetype plugin indent on
 colorscheme slate
 
+" Current line color - GUI
+hi CursorLine   guibg=gray18
+hi CursorColumn guibg=gray18
+
 "Set settings
 "============================================================================================================
+"If the gui is running
+:set guifont=Source\ Code\ Pro\12
+
+set encoding=utf-8          " Necessary to show Unicode glyphs
+set history=50              " Keep 50 lines of command line history
+set undolevels=200          " Keep 200 undo levels in history
+set showcmd                 " Display incomplete commands
+set incsearch               " Do incremental searching
+set ignorecase              " Searches should be case-insensitive by default
+set wildignore+=*.svn       " Prevent vim and its plugins from ever displaying or working with SVN files.
+set cursorline              " Turn on highlighting of current line.
+hi CursorLine term=bold cterm=bold guibg=Grey40 
+set clipboard=unnamed       " Sets default register to be * register, which is the system clipboard. So Cmd+C and y are now the same thing; Cmd+V and p are now the same thing! Compatible with yankring.
+set guicursor+=n-v:blinkon0 " Disable cursor blinking (blinkon0) in normal (n) and visual (v) modes, but not in insert (i; omitted) mode.
+
+" In many terminal emulators the mouse works just fine, thus enable it.
+ if has('mouse')
+   set mouse=a
+ endif
+
 
 "To insert space characters whenever the tab key is pressed, set the 'expandtab' option:
 :set expandtab
@@ -64,6 +89,15 @@ colorscheme slate
 "Plugin Settings
 "============================================================================================================
 
+"do not clear cache on exit
+let g:ctrlp_clear_cache_on_exit=0
+
+" Set desired diff colors.
+highlight DiffAdd guibg=DarkGreen
+highlight DiffChange guibg=DarkBlue
+highlight DiffText guibg=Orange
+highlight DiffDelete guibg=DarkRed
+
 "Location of ctags and window width
 let Tlist_Ctags_Cmd = "/usr/bin/ctags"
 let Tlist_WinWidth = 50
@@ -72,7 +106,7 @@ let Tlist_WinWidth = 50
 let NERDTreeShowHidden=1
 
 " Force NERDTree to default to this width (in columns)
-let NERDTreeWinSize=50
+let NERDTreeWinSize=40
 
 " Tell NERDTree to ignore display of SVN files.
 let NERDTreeIgnore=['\.svn$', '\.svn/']
@@ -96,6 +130,17 @@ set backspace=2
 
 "open c tags in new tab
 ":nnoremap <silent><Leader><C-]> <C-w><C-]><C-w>T
+
+"Tab is 2 arrows? now it's one instead
+:nnoremap > >>
+:nnoremap < <<
+
+" Add keyboard shortcuts
+map <Leader>n gt
+map <Leader>N gT
+map <Leader>w :w<cr>
+map <Leader>q :q<cr>
+map <Leader>t :tabnew<cr>
 
 "Tabbing
 "===========================================================================================================
