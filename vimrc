@@ -16,6 +16,7 @@ execute pathogen#infect()
 " required! 
 Bundle 'gmarik/vundle'
 Bundle 'Valloric/YouCompleteMe'
+Bundle 'airblade/vim-gitgutter'
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 let g:ctrlp_max_files = 0
@@ -49,9 +50,9 @@ set clipboard=unnamed       " Sets default register to be * register, which is t
 set guicursor+=n-v:blinkon0 " Disable cursor blinking (blinkon0) in normal (n) and visual (v) modes, but not in insert (i; omitted) mode.
 
 " In many terminal emulators the mouse works just fine, thus enable it.
- if has('mouse')
-   set mouse=a
- endif
+" if has('mouse')
+"   set mouse=a
+" endif
 
 
 "To insert space characters whenever the tab key is pressed, set the 'expandtab' option:
@@ -123,7 +124,7 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 
 "Mapped Keys
 "===========================================================================================================
-
+let g:yankring_replace_n_pkey = '<C-M>'
 map <F4> :TlistToggle<cr>
 map <F5> :NERDTree ~/vimProjectLink<cr>
 set backspace=2
@@ -136,8 +137,8 @@ set backspace=2
 :nnoremap < <<
 
 " Add keyboard shortcuts
-map <Leader>n gt
-map <Leader>N gT
+map <Leader>. gt
+map <Leader>, gT
 map <Leader>w :w<cr>
 map <Leader>q :q<cr>
 map <Leader>t :tabnew<cr>

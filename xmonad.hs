@@ -76,8 +76,8 @@ myKeys = [
     ((mod4Mask .|. shiftMask, xK_d), spawn "gthumb"),
     ((mod4Mask .|. shiftMask, xK_equal), spawn "xzoom -mag 10"),
     -- listen to specific hardware buttons super f1,f2,f3
-    ((mod4Mask, xK_F2), spawn "amixer set Master 5-"),
-    ((mod4Mask, xK_F3), spawn "amixer set Master 5+"),
+    ((mod4Mask, xK_F2), spawn "amixer set Master 7-"),
+    ((mod4Mask, xK_F3), spawn "amixer set Master 7+"),
     ((mod4Mask, xK_F1), spawn "amixer -D pulse set Master toggle"),
     -- kill and copy windows
     ((mod4Mask .|. shiftMask, xK_c), kill1),
