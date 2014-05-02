@@ -1,7 +1,7 @@
 " This must be first, because it changes other options as a side effect
 set nocompatible               " be iMproved
 filetype off                   " required!
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
 
 "Peter was here
@@ -35,7 +35,7 @@ hi CursorColumn guibg=gray18
 "Set settings
 "============================================================================================================
 "If the gui is running
-:set guifont=Source\ Code\ Pro\12
+set guifont=Source\ Code\ Pro\ 12
 
 set encoding=utf-8          " Necessary to show Unicode glyphs
 set history=50              " Keep 50 lines of command line history
@@ -62,7 +62,7 @@ set guicursor+=n-v:blinkon0 " Disable cursor blinking (blinkon0) in normal (n) a
 
 :set nowrap          "Turn off line wrap
 :set number          "Show Line numbers
-:set dir=~/swp   "The swap files are all stored in the specific directory
+:set dir=~/.swp   "The swap files are all stored in the specific directory
 
 
 "Ignore the following directories
