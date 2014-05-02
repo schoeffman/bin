@@ -1,2 +1,2 @@
 #!/bin/bash
-fusermount -u /home/peter/safe
+fusermount -u ~/bin/safe

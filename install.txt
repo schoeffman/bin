@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo apt-get install unetbootin gparted google-chrome curl git zsh ssh mercurial checkinstall libghc-ncurses-dev synaptic vim-gnome
+sudo apt-get install unetbootin gparted google-chrome curl git zsh ssh mercurial checkinstall libghc-ncurses-dev synaptic vim-gnome encfs
 
 #gvim is launched with vim -g
 
