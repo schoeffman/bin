@@ -1,0 +1,29 @@
+#!/bin/bash
+
+sudo apt-get install unetbootin gparted google-chrome curl git zsh ssh mercurial checkinstall libghc-ncurses-dev synaptic vim-gnome
+
+#gvim is launched with vim -g
+
+#oh my zsh
+curl -L http://install.ohmyz.sh | sh
+chsh -s `which zsh`
+
+ssh-keygen -t rsa
+
+mkdir -p ~/.vim/autoload ~/.vim/bundle; \
+curl -LSso ~/.vim/autoload/pathogen.vim \
+    https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+
+git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+git clone https://github.com/kien/ctrlp.vim.git ~/.vim/bundle/ctrlp.vim
+
+
+
+#source code pro
+mkdir /tmp/adodefont
+cd /tmp/adodefont
+wget http://downloads.sourceforge.net/project/sourcecodepro.adobe/SourceCodePro_FontsOnly-1.017.zip
+unzip SourceCodePro_FontsOnly-1.017.zip
+mkdir -p ~/.fonts
+cp SourceCodePro_FontsOnly-1.017/OTF/*.otf ~/.fonts
+fc-cache -f -v
