@@ -1,2 +1,3 @@
 #!/bin/bash
+# for mac use umount ~/bin/safe # nothing can be accessing the volume when trying to unmount
 fusermount -u ~/bin/safe

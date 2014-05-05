@@ -12,10 +12,9 @@ execute pathogen#infect()
 "Vundle Bundles
 "============================================================================================================
 
-" let Vundle manage Vundle
-" required! 
+" let Vundle manage Vundle - run :PluginInstall to install plugins
 Bundle 'gmarik/vundle'
-Bundle 'Valloric/YouCompleteMe'
+"Bundle 'Valloric/YouCompleteMe' - Remove 
 Bundle 'airblade/vim-gitgutter'
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
