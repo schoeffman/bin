@@ -43,7 +43,7 @@ Bundle 'arkwright/vim-whiplash'
 syntax on
 filetype plugin indent on
 
-"To use the them create ln -s ~/bin/codeschool.vim ~/.vim/color/codeschool.vim
+"To use the them create ln -s ~/bin/codeschool.vim ~/.vim/colors/codeschool.vim
 colorscheme codeschool
 
 " Set desired diff colors.
