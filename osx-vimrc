@@ -112,7 +112,7 @@ let g:yankring_replace_n_nkey = '<D-P>'
 
 "Ctrl P settings
 let g:ctrlp_max_files = 0 "Have no limit to what ctrlp can index
-let g:ctrlp_clear_cache_on_exit=0 - maybe I do want this reset "do not clear cache on exit
+let g:ctrlp_clear_cache_on_exit=0 "- maybe I do want this reset "do not clear cache on exit
 
 
 
