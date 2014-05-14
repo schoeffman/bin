@@ -10,6 +10,8 @@ ZSH_THEME="robbyrussell"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+#alias mci-msg=`osascript -e 'display notification "All Done Dave" with title "HAL-9000"'`
 alias mci-ui='mvn clean install -f ~/projects/cq5/UI/pom.xml -P adobe-public,local' 
 alias mci-cq='mvn clean install -f ~/projects/cq5/pom.xml -P adobe-public,local'    
 

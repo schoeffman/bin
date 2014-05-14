@@ -68,39 +68,43 @@ set guicursor+=n-v:blinkon0 " Disable cursor blinking (blinkon0) in normal (n) a
    set mouse=a
  endif
 
-:set nowrap          "Turn off line wrap
-:set number          "Show Line numbers
-:set dir=~/.swp   "The swap files are all stored in the specific directory
+set nowrap          "Turn off line wrap
+set number          "Show Line numbers
+set dir=~/.swp   "The swap files are all stored in the specific directory
 
 
 "Ignore the following directories
-:set wildignore+=~/projects/*/target/*
-:set wildignore+=~/projects/cq5/UI/target/*
-:set wildignore+=~/projects/cq5/UI/target/*
-:set wildignore+=~/projects/cq5/Config/*
-:set wildignore+="~/projects/cq5/Enviroment Specific Config/*"
-:set wildignore+=~/projects/wordpress/**
-:set wildignore+=~/projects/*/wp-includes/*
-:set wildignore+=~/projects/*/wp-admin/*
-:set wildignore+=~/projects/Misc/*
-:set wildignore+=~/projects/packages/*
-:set wildignore+=~/projects/starauth/tmp/*
-:set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg,*.zip,*.rar,*.JPG,*.BMP,*.GIF,*.PNG,*.JPEG,*.ZIP,*.RAR
-:set wildignore+=.svn,.git
-:set wildignore+=.*
+set wildignore+=~/projects/*/target/*
+set wildignore+=~/projects/cq5/UI/target/*
+set wildignore+=~/projects/cq5/UI/target/*
+set wildignore+=~/projects/cq5/Config/*
+set wildignore+="~/projects/cq5/Enviroment Specific Config/*"
+set wildignore+=~/projects/wordpress/**
+set wildignore+=~/projects/*/wp-includes/*
+set wildignore+=~/projects/*/wp-admin/*
+set wildignore+=~/projects/Misc/*
+set wildignore+=~/projects/packages/*
+set wildignore+=~/projects/starauth/tmp/*
+set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg,*.zip,*.rar,*.JPG,*.BMP,*.GIF,*.PNG,*.JPEG,*.ZIP,*.RAR
+set wildignore+=.svn,.git
+set wildignore+=.*
+set wildignore+=app/bower_components
+set wildignore+=app/bower_components/**
+set wildignore+=node_modules/
+set wildignore+=node_modules/**
 
 "Location of the tags file for ctags - to generate : ctags -R .
-:set tags=./tags,tags,~/projects/thegridto/application/tags,~/projects/cq5/tags,~projects/starauth/tags,~/projects/thegridto/
+set tags=./tags,tags,~/projects/thegridto/application/tags,~/projects/cq5/tags,~projects/starauth/tags,~/projects/thegridto/
 
-:set ic "ignore case in search
-:set shell=zsh
+set ic "ignore case in search
+set shell=zsh
 
 "Plugin Settings
 "============================================================================================================
 
 "Ctrl P settings
 "do not clear cache on exit
-"let g:ctrlp_clear_cache_on_exit=0 - maybe I do want this reset
+let g:ctrlp_clear_cache_on_exit=0 
 
 " Set desired diff colors.
 highlight DiffAdd guibg=DarkGreen
@@ -135,7 +139,9 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 "===========================================================================================================
 let g:yankring_replace_n_pkey = '<C-M>'
 map <F4> :TlistToggle<cr>
-map <F5> :NERDTree ~/projects<cr>
+"map <F5> :NERDTree ~/projects<cr>
+map <F5> :NERDTree<cr>
+imap <F5> <Esc>:NERDTreeToggle<CR>
 set backspace=2
 
 "open c tags in new tab
@@ -152,6 +158,17 @@ map <Leader>w :w<cr>
 map <Leader>q :q<cr>
 map <Leader>t :tabnew<cr>
 noremap U <C-r> "redo is now capital u
+
+
+" Easy selection of the previously pasted text.
+" (We have to prevent YankRing from clobbering this mapping.)
+nnoremap gp `[v`]
+let g:yankring_paste_using_g = 0
+
+" Change default yankring cycle backwards/forwards through pasted text shortcut from
+" Ctrl+p to Command+p, and from Ctrl+n to Command+Shift+p.
+let g:yankring_replace_n_pkey = '<D-p>'
+let g:yankring_replace_n_nkey = '<D-P>'
 
 "Tabbing
 "===========================================================================================================
