@@ -1,6 +1,6 @@
 " This must be first, because it changes other options as a side effect
 set nocompatible               " be iMproved
-filetype off                   " required!
+"filetype off                   " required!
 
 "Start your vim engines!
 set rtp+=~/.vim/bundle/Vundle.vim "Run Time Path to include Vundle
@@ -46,6 +46,12 @@ filetype plugin indent on
 "To use the them create ln -s ~/bin/codeschool.vim ~/.vim/color/codeschool.vim
 colorscheme codeschool
 
+" Set desired diff colors.
+highlight DiffAdd guibg=DarkGreen
+highlight DiffChange guibg=DarkBlue
+highlight DiffText guibg=Orange
+highlight DiffDelete guibg=DarkRed
+
 "If the gui is running
 set guifont=Source\ Code\ Pro\ 14   "This can be overidden by the gui's settings
 set encoding=utf-8          " Necessary to show Unicode glyphs
@@ -58,6 +64,7 @@ set wildignore+=*.svn       " Prevent vim and its plugins from ever displaying o
 set cursorline              " Turn on highlighting of current line.
 set clipboard=unnamed       " Sets default register to be * register, which is the system clipboard. So Cmd+C and y are now the same thing; Cmd+V and p are now the same thing! Compatible with yankring.
 set guicursor+=n-v:blinkon0 " Disable cursor blinking (blinkon0) in normal (n) and visual (v) modes, but not in insert (i; omitted) mode.
+set foldminlines=99999      " Disable code folding entirely. I hate that feature!
 
 " In many terminal emulators the mouse works just fine, thus enable it.
  if has('mouse')
@@ -107,11 +114,6 @@ let g:yankring_replace_n_nkey = '<D-P>'
 let g:ctrlp_max_files = 0 "Have no limit to what ctrlp can index
 let g:ctrlp_clear_cache_on_exit=0 - maybe I do want this reset "do not clear cache on exit
 
-" Set desired diff colors.
-highlight DiffAdd guibg=DarkGreen
-highlight DiffChange guibg=DarkBlue
-highlight DiffText guibg=Orange
-highlight DiffDelete guibg=DarkRed
 
 
 " NERDTree defaults to showing hidden files.
