@@ -53,7 +53,9 @@ highlight DiffText guibg=Orange
 highlight DiffDelete guibg=DarkRed
 
 "If the gui is running
-set guifont=Source\ Code\ Pro\ 14   "This can be overidden by the gui's settings
+set guifont=Source\ Code\ Pro\:h14  "This can be overidden by the gui's settings
+
+"Settings I stole for Arkwright
 set encoding=utf-8          " Necessary to show Unicode glyphs
 set history=50              " Keep 50 lines of command line history
 set undolevels=200          " Keep 200 undo levels in history
@@ -81,6 +83,7 @@ set wildignore+=~/projects/*/target/*
 set wildignore+=~/projects/cq5/UI/target/*
 set wildignore+=~/projects/cq5/UI/target/*
 set wildignore+=~/projects/cq5/Config/*
+set wildignore+=~/projects/cq5/Core/target/**
 set wildignore+="~/projects/cq5/Enviroment Specific Config/*"
 set wildignore+=~/projects/wordpress/**
 set wildignore+=~/projects/*/wp-includes/*
@@ -117,7 +120,11 @@ let g:yankring_replace_n_nkey = '<D-P>'
 "Ctrl P settings
 let g:ctrlp_max_files = 0 "Have no limit to what ctrlp can index
 let g:ctrlp_clear_cache_on_exit=0 "- maybe I do want this reset "do not clear cache on exit
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$' "additional custom ignore system, supposdly works with wildignore
 
+
+"NERD TREE
+"==============================
 " NERDTree defaults to showing hidden files.
 let NERDTreeShowHidden=1
 
