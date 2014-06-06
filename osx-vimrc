@@ -33,7 +33,7 @@ Bundle 'tmhedberg/matchit'
 Bundle 'rking/ag.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'vim-scripts/ctags.vim'
-Bundle 'arkwright/vim-whiplash'
+"Bundle 'arkwright/vim-whiplash'
 "End Vundle Bundles
 
 
@@ -62,7 +62,7 @@ set undolevels=200          " Keep 200 undo levels in history
 set showcmd                 " Display incomplete commands
 set incsearch               " Do incremental searching
 set ignorecase              " Searches should be case-insensitive by default
-set wildignore+=*.svn       " Prevent vim and its plugins from ever displaying or working with SVN files.
+"set wildignore+=*.svn       " Prevent vim and its plugins from ever displaying or working with SVN files.
 set cursorline              " Turn on highlighting of current line.
 set clipboard=unnamed       " Sets default register to be * register, which is the system clipboard. So Cmd+C and y are now the same thing; Cmd+V and p are now the same thing! Compatible with yankring.
 set guicursor+=n-v:blinkon0 " Disable cursor blinking (blinkon0) in normal (n) and visual (v) modes, but not in insert (i; omitted) mode.
@@ -79,24 +79,17 @@ set dir=~/.swp   "The swap files are all stored in the specific directory
 
 
 "Ignore the following directories
-set wildignore+=~/projects/*/target/*
-set wildignore+=~/projects/cq5/UI/target/*
-set wildignore+=~/projects/cq5/Config/*
-set wildignore+=~/projects/cq5/Core/target/**
-set wildignore+=~/projects/cq5/Enviroment\ Specific\ Config/*
-set wildignore+=~/projects/wordpress/**
-set wildignore+=~/projects/*/wp-includes/*
-set wildignore+=~/projects/*/wp-admin/*
-set wildignore+=~/projects/Misc/*
-set wildignore+=~/projects/packages/*
-set wildignore+=~/projects/starauth/tmp/*
+set wildignore+=*/target/*
+set wildignore+=*/migrate/*
+set wildignore+=*/tmp/*
+set wildignore+=*/cq5/Config/*
+set wildignore+=*/Core/target/*
+set wildignore+=*/wp-includes/*
+set wildignore+=*/wp-admin/*
 set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg,*.zip,*.rar,*.JPG,*.BMP,*.GIF,*.PNG,*.JPEG,*.ZIP,*.RAR
 set wildignore+=.svn,.git
-set wildignore+=.*
-set wildignore+=app/bower_components
-set wildignore+=app/bower_components/**
-set wildignore+=node_modules/
-set wildignore+=node_modules/**
+set wildignore+=*/bower_components/*
+set wildignore+=*/node_modules/*
 
 "Location of the tags file for ctags - to generate : ctags -R .
 set tags=./tags,tags,~/projects/thegridto/application/tags,~/projects/cq5/tags,~projects/starauth/tags,~/projects/thegridto/

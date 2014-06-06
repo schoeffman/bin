@@ -62,7 +62,10 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="$PATH:/Applications:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin"
+export PATH="$PATH:/Applications:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin"     #Default
+export PATH="$PATH:/Applications/adt-bundle-mac-x86_64-20140321/sdk/tools"                            #Android tools sdk
+export PATH="$PATH:/Applications/adt-bundle-mac-x86_64-20140321/sdk/platform-tools"                   #Android platorm tools sdk
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
