@@ -70,3 +70,9 @@ export PATH="/home/peter/bin/apache-maven-3.0.4/bin:/home/peter/.nvm/v0.10.22/bi
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
+
+[ -s "/home/schoeffman/.nvm/nvm.sh" ] && . "/home/schoeffman/.nvm/nvm.sh" # This loads nvm
+nvm use 0.10
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"

@@ -1,0 +1,9 @@
+Because I always forget...
+
+"For finding a file name below the current directory
+find . -name "filename.txt"
+
+"Find a directory below the current directory
+find . -typ d -name folderName
+
+Use -iname for ignored case
