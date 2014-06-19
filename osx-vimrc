@@ -30,7 +30,8 @@ Bundle 'michaeljsmith/vim-indent-object'
 Bundle 'vim-scripts/PHP-correct-Indenting'
 Bundle 'vim-scripts/YankRing.vim'
 Bundle 'tmhedberg/matchit'
-Bundle 'rking/ag.vim' "Don't forget to install the silver searcher https://github.com/ggreer/the_silver_searcher
+"Don't forget to install the silver searcher https://github.com/ggreer/the_silver_searcher
+Bundle 'rking/ag.vim' 
 Bundle 'tpope/vim-fugitive'
 Bundle 'vim-scripts/ctags.vim'
 "Bundle 'arkwright/vim-whiplash'
@@ -169,6 +170,10 @@ noremap <Leader>q :q<cr>
 noremap <Leader>t :tabnew<cr>
 noremap U <C-r> "redo is now capital u
 
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 " Easy selection of the previously pasted text.
 " (We have to prevent YankRing from clobbering this mapping.)
