@@ -30,7 +30,7 @@ Bundle 'michaeljsmith/vim-indent-object'
 Bundle 'vim-scripts/PHP-correct-Indenting'
 Bundle 'vim-scripts/YankRing.vim'
 Bundle 'tmhedberg/matchit'
-Bundle 'rking/ag.vim'
+Bundle 'rking/ag.vim' "Don't forget to install the silver searcher https://github.com/ggreer/the_silver_searcher
 Bundle 'tpope/vim-fugitive'
 Bundle 'vim-scripts/ctags.vim'
 "Bundle 'arkwright/vim-whiplash'
@@ -79,17 +79,19 @@ set dir=~/.swp   "The swap files are all stored in the specific directory
 
 
 "Ignore the following directories
-set wildignore+=*/target/*
-set wildignore+=*/migrate/*
-set wildignore+=*/tmp/*
-set wildignore+=*/cq5/Config/*
-set wildignore+=*/Core/target/*
-set wildignore+=*/wp-includes/*
-set wildignore+=*/wp-admin/*
+set wildignore+=*/target/*       "Generic
+set wildignore+=*/migrate/*      "?
+set wildignore+=*/tmp/*          "Generic
+set wildignore+=*/cq5/Config/*   "CQ5
+set wildignore+=*/Core/target/*  "CQ5
+set wildignore+=*/wp-includes/*  "Wordpress
+set wildignore+=*/wp-admin/*     "Wordpress
 set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg,*.zip,*.rar,*.JPG,*.BMP,*.GIF,*.PNG,*.JPEG,*.ZIP,*.RAR
-set wildignore+=.svn,.git
-set wildignore+=*/bower_components/*
-set wildignore+=*/node_modules/*
+set wildignore+=.svn,.git              "Repositories
+set wildignore+=*/bower_components/*   "Angular
+set wildignore+=*/node_modules/*       "Angular
+set wildignore+=*/www/*                "Angular
+set wildignore+=*/dist/*               "Angular
 
 "Location of the tags file for ctags - to generate : ctags -R .
 set tags=./tags,tags,~/projects/thegridto/application/tags,~/projects/cq5/tags,~projects/starauth/tags,~/projects/thegridto/
@@ -135,7 +137,7 @@ let NERDTreeDirArrows=1
 let html_no_rendering=1 " Disable underlining of tabs in HTML documents.
 
 "This should be for the grep plugin that I don't have working yet
-noremap <Leader>f :Ack --ignore-dir=cache --ignore-dir=target -i 
+noremap <Leader>f :Ag -i 
 
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 
