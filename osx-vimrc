@@ -171,7 +171,7 @@ let NERDTreeDirArrows=1
 let html_no_rendering=1 " Disable underlining of tabs in HTML documents.
 
 "This should be for the grep plugin that I don't have working yet
-noremap <Leader>f :Ag -i 
+noremap <Leader>f :tabnew<cr>:Ag -i 
 
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 
@@ -180,7 +180,7 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 let g:yankring_replace_n_pkey = '<C-M>'
 
 imap <F5> <Esc>:NERDTreeToggle<CR>
-"map <F4> :TlistToggle<cr> - what is this for?
+"map <F4> :TlistToggle<cr> "Old command t toggle 
 noremap <F5> :NERDTree<cr>
 
 set backspace=2
@@ -196,8 +196,11 @@ nnoremap > >>
 nnoremap < <<
 
 " Add keyboard shortcuts - map is recursive and noremap is not recursive
+"
+"Move through tabs
 noremap <Leader>. gt
 noremap <Leader>, gT
+
 noremap <Leader>w :w<cr>
 noremap <Leader>q :q<cr>
 noremap <Leader>t :tabnew<cr>
@@ -233,6 +236,8 @@ let g:yankring_paste_using_g = 0
 " Ctrl+p to Command+p, and from Ctrl+n to Command+Shift+p.
 let g:yankring_replace_n_pkey = '<D-j>'
 let g:yankring_replace_n_nkey = '<D-k>'
+
+
 
 "Tabbing
 "===========================================================================================================
