@@ -19,22 +19,55 @@ call vundle#rc()
 " :PluginSearch(!) foo - search (or refresh cache first) for foo
 " :PluginClean(!)      - confirm (or auto-approve) removal of unused plugins
 
-Bundle 'gmarik/vundle'
-Bundle 'kien/ctrlp.vim'
-Bundle 'scrooloose/nerdtree'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'sjl/gundo.vim'
-Bundle 'vim-scripts/vcscommand.vim'
-Bundle 'junegunn/vim-easy-align'
-Bundle 'michaeljsmith/vim-indent-object'
-Bundle 'vim-scripts/PHP-correct-Indenting'
-Bundle 'vim-scripts/YankRing.vim'
-Bundle 'tmhedberg/matchit'
-"Don't forget to install the silver searcher https://github.com/ggreer/the_silver_searcher
-Bundle 'rking/ag.vim' 
-Bundle 'tpope/vim-fugitive'
-Bundle 'vim-scripts/ctags.vim'
-"Bundle 'arkwright/vim-whiplash'
+Bundle 'gmarik/vundle'                       
+"The plugin to install and update plugins faster
+
+Bundle 'kien/ctrlp.vim'                      
+"File fuzzy search to navigate projects
+
+Bundle 'scrooloose/nerdtree'                 
+"File explorer
+
+Bundle 'airblade/vim-gitgutter'              
+"Adds a bar to the side of files to show if the line is different from the git version
+
+Bundle 'sjl/gundo.vim'                       
+"Visualize your Vim undo tree.
+
+Bundle 'vim-scripts/vcscommand.vim'          
+"Useful for manipulating files controlled by CVS, SVN, SVK, git, bzr, and hg
+
+Bundle 'junegunn/vim-easy-align'             
+"Supposedly Aligns things properly
+
+Bundle 'michaeljsmith/vim-indent-object'     
+"Defines a new text object representing lines of code at the same indent level
+
+Bundle 'vim-scripts/PHP-correct-Indenting'   
+"Fixes php indenting
+
+Bundle 'vim-scripts/YankRing.vim'            
+"Maps the vim buffer and system clipboard togeather
+
+Bundle 'tmhedberg/matchit'                   
+"Element matching that I could never really get to work
+
+Bundle 'rking/ag.vim'                        
+"Really fast search - requires the solver searcher
+
+Bundle 'tpope/vim-fugitive'                  
+"Git tools for vim
+
+Bundle 'vim-scripts/ctags.vim'               
+"Seldom use - for linking functions to their definitions
+
+Bundle 'arkwright/vim-manhunt'               
+"Comparison of git files through fugitivea - requires fugitive
+
+Bundle 'scrooloose/syntastic'                 
+"Syntax checking
+
+"Bundle 'arkwright/vim-whiplash'             "Forget rob's first plugin
 "End Vundle Bundles
 
 
@@ -162,7 +195,7 @@ let Tlist_WinWidth = 50
 nnoremap > >>
 nnoremap < <<
 
-" Add keyboard shortcuts
+" Add keyboard shortcuts - map is recursive and noremap is not recursive
 noremap <Leader>. gt
 noremap <Leader>, gT
 noremap <Leader>w :w<cr>
@@ -170,10 +203,26 @@ noremap <Leader>q :q<cr>
 noremap <Leader>t :tabnew<cr>
 noremap U <C-r> "redo is now capital u
 
+"activate git version check
+noremap <Leader>g :Manhunt<cr>
+
+"control hjkl to navigate open splits
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+" Allow up/down movements and <CR> in quickfix window to preview
+" the file under the cursor, instead of jumping to it immediately.
+" <C-w>p jumps to the previous (last accessed) window.
+augroup quickfix_preview
+  autocmd!
+  autocmd BufWinEnter quickfix nnoremap <buffer> <CR> <CR>zz<C-w>p
+  autocmd BufWinEnter quickfix nnoremap <buffer> j j<CR>zz<C-w>p 
+  autocmd BufWinEnter quickfix nnoremap <buffer> k k<CR>zz<C-w>p
+augroup END
+
+
 
 " Easy selection of the previously pasted text.
 " (We have to prevent YankRing from clobbering this mapping.)

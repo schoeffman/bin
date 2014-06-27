@@ -7,3 +7,8 @@ find . -name "filename.txt"
 find . -typ d -name folderName
 
 Use -iname for ignored case
+
+
+Export sql as file - I had to write somewhere that sql was allowed to write
+Select user_email from wp_users LIMIT 10 INTO OUTFILE '/tmp/emails.csv' FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n';
+
