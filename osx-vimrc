@@ -231,8 +231,8 @@ let g:yankring_paste_using_g = 0
 
 " Change default yankring cycle backwards/forwards through pasted text shortcut from
 " Ctrl+p to Command+p, and from Ctrl+n to Command+Shift+p.
-let g:yankring_replace_n_pkey = '<D-p>'
-let g:yankring_replace_n_nkey = '<D-P>'
+let g:yankring_replace_n_pkey = '<D-j>'
+let g:yankring_replace_n_nkey = '<D-k>'
 
 "Tabbing
 "===========================================================================================================
