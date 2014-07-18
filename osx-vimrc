@@ -68,9 +68,12 @@ Bundle 'scrooloose/syntastic'
 "Syntax checking
 
 Bundle 'arkwright/vim-whiplash'  
-"End Vundle Bundles
+"Project Switcher
 
+Bundle 'arkwright/vim-irregular'
+"Vim search with handy regex cheat sheet
 
+"
 "Vim Settings
 "============================================================================================================
 
