@@ -73,7 +73,9 @@ Bundle 'arkwright/vim-whiplash'
 Bundle 'arkwright/vim-irregular'
 "Vim search with handy regex cheat sheet
 
-"
+Bundle 'elzr/vim-json'
+"Json syntax highlighting
+
 "Vim Settings
 "============================================================================================================
 
@@ -251,15 +253,26 @@ let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_javascript_jshint_args = "--config ~/bin/jshintrc" 
 "js_hint_options_are_here:  http://www.jshint.com/docs/options/
 
- let g:syntastic_aggregate_errors = 1
- let g:syntastic_always_populate_loc_list = 1
- let g:syntastic_auto_loc_list = 1
- 
- " Make Syntastic easier to use with a simple toggle command.
- " Closes location list automatically when Syntastic is toggled off.
+let g:syntastic_json_checkers = ['jsonlint']                    " npm install -g jsonlint
+let g:syntastic_aggregate_errors = 1
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+
+" Pretty-print JSON in the current buffer.
+" Will return an error if the JSON is malformed.
+" From: http://pascalprecht.github.io/2014/07/10/pretty-print-json-in-vim/
+command! JsonPrettyPrint :%!python -m json.tool
+
+ " Make Syntastic easier to use with a simple toggle command.  " Closes location list automatically when Syntastic is toggled off.
  command! Lint execute "lcl | SyntasticToggleMode"
- 
-"===========================================================================================================
+
+" =========================================
+" vim-json
+" =========================================
+
+" Disable key mappings.
+let g:vim_json_syntax_conceal = 0    " Disable syntax concealing (i.e. :setlocal conceallevel=0)
+
 
 "===========================================================================================================
 "Tabbing
