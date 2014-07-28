@@ -2,6 +2,7 @@
 set nocompatible               " be iMproved
 "filetype off                   " required!
 
+
 "Start your vim engines!
 set rtp+=~/.vim/bundle/Vundle.vim "Run Time Path to include Vundle
 call vundle#rc()
@@ -91,6 +92,10 @@ highlight DiffChange guibg=DarkBlue
 highlight DiffText guibg=Orange
 highlight DiffDelete guibg=DarkRed
 
+"Highlight search as we search
+set incsearch
+set hlsearch
+
 "If the gui is running
 set guifont=Source\ Code\ Pro\:h14  "This can be overidden by the gui's settings
 
@@ -154,6 +159,8 @@ let g:yankring_replace_n_nkey = '<D-P>'
 let g:ctrlp_max_files = 0 "Have no limit to what ctrlp can index
 let g:ctrlp_clear_cache_on_exit=0 "- maybe I do want this reset "do not clear cache on exit
 "let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$' "additional custom ignore system, supposdly works with wildignore
+let g:ctrlp_map = '<Leader>p'
+let g:ctrlp_working_path_mode = 'ra'
 
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '^/target/',
@@ -201,7 +208,7 @@ nnoremap > >>
 nnoremap < <<
 
 " Add keyboard shortcuts - map is recursive and noremap is not recursive
-"
+
 "Move through tabs
 noremap <Leader>. gt
 noremap <Leader>, gT
@@ -219,6 +226,14 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+"Map cntl p to leader p
+"nnoremap <Leader>p :CtrlP pwd<cr>
+
+"Set tab to esc - :help index
+inoremap <Tab> <Esc>
+"map <Tab> <Esc>
+cnoremap <Tab> <C-c>
 
 " Allow up/down movements and <CR> in quickfix window to preview
 " the file under the cursor, instead of jumping to it immediately.
@@ -278,14 +293,14 @@ let g:vim_json_syntax_conceal = 0    " Disable syntax concealing (i.e. :setlocal
 "Tabbing
 "===========================================================================================================
 " size of a hard tabstop
-set tabstop=3
+set tabstop=2
 
 " size of an 'indent'
-set shiftwidth=3
+set shiftwidth=2
 
 " a combination of spaces and tabs are used to simulate tab stops at a width
 " other than the (hard)tabstop
-set softtabstop=3
+set softtabstop=2
 
 " make "tab" insert indents instead of tabs at the beginning of a line
 set smarttab
