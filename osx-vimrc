@@ -84,7 +84,7 @@ syntax on
 filetype plugin indent on
 
 "To use the them create ln -s ~/bin/codeschool.vim ~/.vim/colors/codeschool.vim
-colorscheme codeschool
+"colorscheme codeschool
 
 " Set desired diff colors.
 highlight DiffAdd guibg=DarkGreen
@@ -233,9 +233,22 @@ nnoremap <C-H> <C-W><C-H>
 "nnoremap <Leader>p :CtrlP pwd<cr>
 
 "Set tab to esc - :help index
-inoremap <Tab> <Esc>
-"map <Tab> <Esc>
-cnoremap <Tab> <C-c>
+"inoremap <Tab> <Esc>
+"cnoremap <Tab> <C-c>
+"vnoremap <Tab> <Esc>
+"onoremap <Tab> <Esc>
+
+"Map control l to tab
+"inoremap <C-l> <Tab>
+"cnoremap <C-l> <Tab>
+"vnoremap <C-l> <Tab> 
+"onoremap <C-l> <Tab>
+
+"inoremap <S-C-l> <S-Tab>
+"cnoremap <S-C-l> <S-Tab>
+"vnoremap <S-C-l> <S-Tab> 
+"onoremap <S-C-l> <S-Tab>
+
 
 " Allow up/down movements and <CR> in quickfix window to preview
 " the file under the cursor, instead of jumping to it immediately.
@@ -313,3 +326,26 @@ set expandtab
 retab "this will cause all previous tabs to be converted to spaces
 
 cd ~/projects
+
+"Rob's :GitLog prepluginified
+function! s:Gitlog()
+  let l:numCommits = 100
+  let l:gitLogCmd  = 'git log -n ' . l:numCommits . ' --name-only --topo-order --pretty=format:''\%n\%s\%n================================================\%nAuthor: \%an\%nDate:   \%ci\%nCommit: \%H\%n------------------------------------------------'''
+  " let l:gitLogCmd  = 'git log -n ' . l:numCommits . ' --pretty=format:''Commit: \%s\%n================================================\%nAuthor: \%an\%nDate:   %cd\%ncommit  \%H\%n------------------------------------------------\%n'' --name-only --topo-order'
+
+  tabnew
+
+  execute 'silent! read !' . l:gitLogCmd
+
+  normal! gg
+  normal! 2dd
+
+  setlocal buftype=nofile
+  setlocal bufhidden=hide
+  setlocal nomodifiable
+
+  " <CR> opens current file in new tab.
+  nnoremap <buffer> <CR> <C-w>gf
+endfunction
+command! Gitlog :call s:Gitlog()
+
