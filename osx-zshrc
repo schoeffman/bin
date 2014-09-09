@@ -14,6 +14,7 @@ ZSH_THEME="robbyrussell"
 #alias mci-msg=`osascript -e 'display notification "All Done Dave" with title "HAL-9000"'`
 alias mci-ui='mvn clean install -f ~/projects/cq5/UI/pom.xml -P adobe-public,local' 
 alias mci-cq='mvn clean install -f ~/projects/cq5/pom.xml -P adobe-public,local'    
+alias mci-cq-error='mvn clean install -e -f ~/projects/cq5/pom.xml -P adobe-public,local'    
 
 [ -s "/Users/schoeffman/.nvm/nvm.sh" ] && . "/Users/schoeffman/.nvm/nvm.sh" # This loads nvm
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
@@ -56,7 +57,10 @@ alias mci-cq='mvn clean install -f ~/projects/cq5/pom.xml -P adobe-public,local'
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+plugins=(git osx)
+
+# Fix with iterm on osx for keeping current dir on new tabs :
+# http://superuser.com/questions/232835/open-a-new-tab-in-the-same-directory
 
 source $ZSH/oh-my-zsh.sh
 
