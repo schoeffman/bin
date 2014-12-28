@@ -1,7 +1,19 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
+export PATH=/usr/local/sbin:$PATH #Brew path
+export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export JAVA_HOME=$(/usr/libexec/java_home) #set java version / home location
 
-# Set name of the theme to load.
+#docker export data
+export DOCKER_HOST=tcp://192.168.59.103:2376
+#export DOCKER_HOST=tcp://192.168.59.103:2375
+#export DOCKER_HOST=tcp://$(boot2docker ip 2>/dev/null):2375
+#export DOCKER_HOST=tcp://$(boot2docker ip 2>/dev/null):2376
+export DOCKER_CERT_PATH=/Users/schoeffman/.boot2docker/certs/boot2docker-vm
+export DOCKER_TLS_VERIFY=1
+#end docker export data
+
+# Se tname of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
@@ -13,8 +25,13 @@ ZSH_THEME="robbyrussell"
 
 #alias mci-msg=`osascript -e 'display notification "All Done Dave" with title "HAL-9000"'`
 alias mci-ui='mvn clean install -f ~/projects/cq5/UI/pom.xml -P adobe-public,local' 
+alias mci-co='mvn clean install -f ~/projects/cq5/Core/pom.xml -P adobe-public,local' 
 alias mci-cq='mvn clean install -f ~/projects/cq5/pom.xml -P adobe-public,local'    
 alias mci-cq-error='mvn clean install -e -f ~/projects/cq5/pom.xml -P adobe-public,local'    
+
+alias ehf='defaults write com.apple.finder AppleShowAllFiles YES;killall Finder /System/Library/CoreServices/Finder.app; echo "Hidden Files ENABLED";'
+alias dhf='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app; echo "Hidden Files DISABLED";'
+
 
 [ -s "/Users/schoeffman/.nvm/nvm.sh" ] && . "/Users/schoeffman/.nvm/nvm.sh" # This loads nvm
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
@@ -88,7 +105,6 @@ export PATH="$PATH:/Applications/adt-bundle-mac-x86_64-20140321/sdk/platform-too
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 nvm use 0.10
 rvm use 1.9.3
