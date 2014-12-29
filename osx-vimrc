@@ -97,7 +97,13 @@ set incsearch
 set hlsearch
 
 "If the gui is running
-set guifont=Source\ Code\ Pro\:h14  "This can be overidden by the gui's settings
+
+if has("gui_running")
+
+else
+  "no console only
+  set guifont=Source\ Code\ Pro\:h14  "This can be overidden by the gui's settings
+endif
 
 "Settings I stole for Arkwright
 set encoding=utf-8          " Necessary to show Unicode glyphs
