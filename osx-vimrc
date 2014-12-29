@@ -77,6 +77,12 @@ Bundle 'arkwright/vim-irregular'
 Bundle 'elzr/vim-json'
 "Json syntax highlighting
 
+Bundle 'arkwright/vim-radar'
+"Easy diff log between 2 commits
+
+Bundle 'tomtom/tcomment_vim'
+"Easy to use file type sensible comments
+"
 "Vim Settings
 "============================================================================================================
 
@@ -332,26 +338,4 @@ set expandtab
 retab "this will cause all previous tabs to be converted to spaces
 
 cd ~/projects
-
-"Rob's :GitLog prepluginified
-function! s:Gitlog()
-  let l:numCommits = 100
-  let l:gitLogCmd  = 'git log -n ' . l:numCommits . ' --name-only --topo-order --pretty=format:''\%n\%s\%n================================================\%nAuthor: \%an\%nDate:   \%ci\%nCommit: \%H\%n------------------------------------------------'''
-  " let l:gitLogCmd  = 'git log -n ' . l:numCommits . ' --pretty=format:''Commit: \%s\%n================================================\%nAuthor: \%an\%nDate:   %cd\%ncommit  \%H\%n------------------------------------------------\%n'' --name-only --topo-order'
-
-  tabnew
-
-  execute 'silent! read !' . l:gitLogCmd
-
-  normal! gg
-  normal! 2dd
-
-  setlocal buftype=nofile
-  setlocal bufhidden=hide
-  setlocal nomodifiable
-
-  " <CR> opens current file in new tab.
-  nnoremap <buffer> <CR> <C-w>gf
-endfunction
-command! Gitlog :call s:Gitlog()
 
