@@ -4,3 +4,4 @@
 :macmenu File.Print key=<nop>
 "You must create a link from ~/bin/codeschool.vim to ~/.vim/colors/codeschool.vim
 colorscheme codeschool
+
