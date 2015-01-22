@@ -1,0 +1,15 @@
+#!/bin/bash
+
+ping -t 2 192.168.1.161
+#test if we are on the home network first
+#ssh -o ConnectTimeout=1 -o ConnectionAttempts=1 schoeffman@192.168.1.161 /bin/bash << EOF 
+#EOF
+
+if [ $? -eq 0 ]; then
+ #We are on the local network connect via static ip
+ echo "=> Opening Internal connection"
+ sshfs schoeffman@192.168.1.161:/media/schoeffman/raidFive/videos ~/bin/remote
+else
+  echo "=> Opening external connection"
+  sshfs schoeffman@home.schoeffman.com:/media/schoeffman/raidFive/videos ~/bin/remote
+fi
