@@ -82,7 +82,10 @@ Bundle 'arkwright/vim-radar'
 
 Bundle 'tomtom/tcomment_vim'
 "Easy to use file type sensible comments
-"
+
+Bundle 'szw/vim-dict'
+"use :Dict to look up definitions / spelling of words
+
 "Vim Settings
 "============================================================================================================
 
