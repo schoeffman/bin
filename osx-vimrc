@@ -1,7 +1,5 @@
-" This must be first, because it changes other options as a side effect
+"This must be the first line, because it changes other options as a side effect
 set nocompatible               " be iMproved
-"filetype off                   " required!
-
 
 "Start your vim engines!
 set rtp+=~/.vim/bundle/Vundle.vim "Run Time Path to include Vundle
@@ -20,7 +18,7 @@ call vundle#rc()
 " :PluginSearch(!) foo - search (or refresh cache first) for foo
 " :PluginClean(!)      - confirm (or auto-approve) removal of unused plugins
 
-Bundle 'gmarik/vundle'                       
+Bundle 'gmarik/Vundle.vim'                       
 "The plugin to install and update plugins faster
 
 Bundle 'kien/ctrlp.vim'                      
@@ -85,6 +83,10 @@ Bundle 'tomtom/tcomment_vim'
 
 Bundle 'szw/vim-dict'
 "use :Dict to look up definitions / spelling of words
+
+Bundle 'wookiehangover/jshint.vim'
+"use jshint in vim. Manual check JSHintUpdate
+"This can also be set in the ~/.vimrc file to bind this command to a key or to turn off error checking by default :JSHintToggle
 
 "Vim Settings
 "============================================================================================================
@@ -156,6 +158,8 @@ set tags=./tags,tags,~/projects/thegridto/application/tags,~/projects/cq5/tags,~
 
 set ic "ignore case in search
 set shell=zsh
+
+set relativenumber
 
 "Plugin Settings
 "============================================================================================================
@@ -263,6 +267,10 @@ nnoremap <C-H> <C-W><C-H>
 "vnoremap <S-C-l> <S-Tab> 
 "onoremap <S-C-l> <S-Tab>
 
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
 
 " Allow up/down movements and <CR> in quickfix window to preview
 " the file under the cursor, instead of jumping to it immediately.
