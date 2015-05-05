@@ -5,5 +5,5 @@
 "You must create a link from ~/bin/codeschool.vim to ~/.vim/colors/codeschool.vim
 
 "Used to use this theme..now I dont
-colorscheme codeschool
+"colorscheme codeschool
 

@@ -1,4 +1,4 @@
-"This must be the first line, because it changes other options as a side effect
+"This must be the first line...aside from this comment...because it changes other options as a side effect
 set nocompatible               " be iMproved
 
 "Start your vim engines!
@@ -21,72 +21,74 @@ call vundle#rc()
 Bundle 'gmarik/Vundle.vim'                       
 "The plugin to install and update plugins faster
 
-Bundle 'kien/ctrlp.vim'                      
+" END - Vundle
+"============================================================================================================
+
+" Additional Plugins
+"============================================================================================================
+
+"Solarized colour pallete
+Bundle 'altercation/vim-colors-solarized'
+
 "File fuzzy search to navigate projects
+Bundle 'kien/ctrlp.vim'                      
 
-Bundle 'scrooloose/nerdtree'                 
 "File explorer
+Bundle 'scrooloose/nerdtree'                 
 
-Bundle 'airblade/vim-gitgutter'              
 "Adds a bar to the side of files to show if the line is different from the git version
+Bundle 'airblade/vim-gitgutter'              
 
-Bundle 'sjl/gundo.vim'                       
 "Visualize your Vim undo tree.
+Bundle 'sjl/gundo.vim'                       
 
-Bundle 'vim-scripts/vcscommand.vim'          
 "Useful for manipulating files controlled by CVS, SVN, SVK, git, bzr, and hg
+Bundle 'vim-scripts/vcscommand.vim'          
 
-Bundle 'junegunn/vim-easy-align'             
 "Supposedly Aligns things properly
+Bundle 'junegunn/vim-easy-align'             
 
-Bundle 'michaeljsmith/vim-indent-object'     
 "Defines a new text object representing lines of code at the same indent level
+Bundle 'michaeljsmith/vim-indent-object'     
 
-Bundle 'vim-scripts/PHP-correct-Indenting'   
 "Fixes php indenting
+Bundle 'vim-scripts/PHP-correct-Indenting'   
 
-Bundle 'vim-scripts/YankRing.vim'            
 "Maps the vim buffer and system clipboard togeather
+Bundle 'vim-scripts/YankRing.vim'            
 
-Bundle 'tmhedberg/matchit'                   
 "Element matching that I could never really get to work
+Bundle 'tmhedberg/matchit'                   
 
-Bundle 'rking/ag.vim'                        
 "Really fast search - requires the solver searcher
+Bundle 'rking/ag.vim'                        
 
-Bundle 'tpope/vim-fugitive'                  
 "Git tools for vim
+Bundle 'tpope/vim-fugitive'                  
 
-Bundle 'vim-scripts/ctags.vim'               
 "Seldom use - for linking functions to their definitions
+Bundle 'vim-scripts/ctags.vim'               
 
-Bundle 'arkwright/vim-manhunt'               
 "Comparison of git files through fugitivea - requires fugitive
+Bundle 'arkwright/vim-manhunt'               
 
-Bundle 'scrooloose/syntastic'                 
 "Syntax checking
+Bundle 'scrooloose/syntastic'                 
 
-Bundle 'arkwright/vim-whiplash'  
-"Project Switcher
-
-Bundle 'arkwright/vim-irregular'
-"Vim search with handy regex cheat sheet
-
-Bundle 'elzr/vim-json'
 "Json syntax highlighting
+Bundle 'elzr/vim-json'
 
-Bundle 'arkwright/vim-radar'
 "Easy diff log between 2 commits
+Bundle 'arkwright/vim-radar'
 
-Bundle 'tomtom/tcomment_vim'
 "Easy to use file type sensible comments
+Bundle 'tomtom/tcomment_vim'
 
-Bundle 'szw/vim-dict'
 "use :Dict to look up definitions / spelling of words
+Bundle 'szw/vim-dict'
 
-Bundle 'wookiehangover/jshint.vim'
-"use jshint in vim. Manual check JSHintUpdate
-"This can also be set in the ~/.vimrc file to bind this command to a key or to turn off error checking by default :JSHintToggle
+" END - Additional Plugins
+"============================================================================================================
 
 "Vim Settings
 "============================================================================================================
@@ -96,37 +98,37 @@ syntax on
 filetype plugin indent on
 
 " Set desired diff colors.
-highlight DiffAdd guibg=DarkGreen
-highlight DiffChange guibg=DarkBlue
-highlight DiffText guibg=Orange
-highlight DiffDelete guibg=DarkRed
+"highlight DiffAdd guibg=DarkGreen
+"highlight DiffChange guibg=DarkBlue
+"highlight DiffText guibg=Orange
+"highlight DiffDelete guibg=DarkRed
 
 "Highlight search as we search
 set incsearch
 set hlsearch
 
-"If the gui is running
-
+"If the gui is running settings
 if has("gui_running")
   set guifont=Source\ Code\ Pro\:h14  "This can be overidden by the gui's settings
+  set cursorline              " Turn on highlighting of current line.
 else
   "console only
   set guifont=Source\ Code\ Pro\:h14  "This can be overidden by the gui's settings
-
 endif
 
-"Settings I stole for Arkwright
 set encoding=utf-8          " Necessary to show Unicode glyphs
 set history=50              " Keep 50 lines of command line history
 set undolevels=200          " Keep 200 undo levels in history
 set showcmd                 " Display incomplete commands
 set incsearch               " Do incremental searching
 set ignorecase              " Searches should be case-insensitive by default
-"set wildignore+=*.svn       " Prevent vim and its plugins from ever displaying or working with SVN files.
-set cursorline              " Turn on highlighting of current line.
+"set wildignore+=*.svn      " Prevent vim and its plugins from ever displaying or working with SVN files.
 set clipboard=unnamed       " Sets default register to be * register, which is the system clipboard. So Cmd+C and y are now the same thing; Cmd+V and p are now the same thing! Compatible with yankring.
 set guicursor+=n-v:blinkon0 " Disable cursor blinking (blinkon0) in normal (n) and visual (v) modes, but not in insert (i; omitted) mode.
 set foldminlines=99999      " Disable code folding entirely. I hate that feature!
+set ic                      " ignore case in search
+set shell=zsh               " I now use ZSH like a kool kid
+set relativenumber          " Relative ling numbers
 
 " In many terminal emulators the mouse works just fine, thus enable it.
  if has('mouse')
@@ -135,33 +137,44 @@ set foldminlines=99999      " Disable code folding entirely. I hate that feature
 
 set nowrap          "Turn off line wrap
 set number          "Show Line numbers
-set dir=~/.swp   "The swap files are all stored in the specific directory
+set dir=~/.swp      "The swap files are all stored in the specific directory
 
 
 "Ignore the following directories
-set wildignore+=*/target/*       "Generic
-set wildignore+=*/migrate/*      "?
-set wildignore+=*/tmp/*          "Generic
-set wildignore+=*/cq5/Config/*   "CQ5
-set wildignore+=*/Core/target/*  "CQ5
-set wildignore+=*/wp-includes/*  "Wordpress
-set wildignore+=*/wp-admin/*     "Wordpress
-set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg,*.zip,*.rar,*.JPG,*.BMP,*.GIF,*.PNG,*.JPEG,*.ZIP,*.RAR
+set wildignore+=*/target/*             "Generic
+set wildignore+=*/migrate/*            "Ruby Migrations
+set wildignore+=*/tmp/*                "Generic
+set wildignore+=*/cq5/Config/*         "CQ5
+set wildignore+=*/Core/target/*        "CQ5
+set wildignore+=*/wp-includes/*        "Wordpress
+set wildignore+=*/wp-admin/*           "Wordpress
 set wildignore+=.svn,.git              "Repositories
 set wildignore+=*/bower_components/*   "Angular
 set wildignore+=*/node_modules/*       "Angular
 set wildignore+=*/www/*                "Angular
 set wildignore+=*/dist/*               "Angular
+set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg,*.zip,*.rar,*.JPG,*.BMP,*.GIF,*.PNG,*.JPEG,*.ZIP,*.RAR
 
+"Left for if I choose to use ctags again
 "Location of the tags file for ctags - to generate : ctags -R .
-set tags=./tags,tags,~/projects/thegridto/application/tags,~/projects/cq5/tags,~projects/starauth/tags,~/projects/thegridto/
+"set tags=./tags,tags,~/projects/thegridto/application/tags,~/projects/cq5/tags,~projects/starauth/tags,~/projects/thegridto/
 
-set ic "ignore case in search
-set shell=zsh
+" End - Vim general Settings 
+"============================================================================================================
 
-set relativenumber
+" Solarized
+"============================================================================================================
 
-"Plugin Settings
+let g:solarized_termtrans = 1
+set background=dark
+colorscheme solarized
+
+
+" End - Solarized 
+"============================================================================================================
+
+
+" Yank Ring Settings
 "============================================================================================================
 " Easy selection of the previously pasted text.
 " (We have to prevent YankRing from clobbering this mapping.)
@@ -173,9 +186,14 @@ let g:yankring_paste_using_g = 0
 let g:yankring_replace_n_pkey = '<D-p>'
 let g:yankring_replace_n_nkey = '<D-P>'
 
+" END - Yank Ring Settings
+"============================================================================================================
+
 "Ctrl P settings
+"============================================================================================================
+
 let g:ctrlp_max_files = 0 "Have no limit to what ctrlp can index
-let g:ctrlp_clear_cache_on_exit=0 "- maybe I do want this reset "do not clear cache on exit
+"let g:ctrlp_clear_cache_on_exit=0 " maybe I do want this reset 'do not clear cache on exit
 "let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$' "additional custom ignore system, supposdly works with wildignore
 let g:ctrlp_map = '<Leader>p'
 let g:ctrlp_working_path_mode = 'ra'
@@ -184,9 +202,23 @@ let g:ctrlp_custom_ignore = {
   \ 'dir':  '^/target/',
   \ }
 
+" Easy selection of the previously pasted text.
+" (We have to prevent YankRing from clobbering this mapping.)
+nnoremap gp `[v`]
+let g:yankring_paste_using_g = 0
+
+" Change default yankring cycle backwards/forwards through pasted text shortcut from
+" Ctrl+p to Command+p, and from Ctrl+n to Command+Shift+p.
+let g:yankring_replace_n_pkey = '<D-j>'
+let g:yankring_replace_n_nkey = '<D-k>'
+
+"END - Ctrl P settings
+"============================================================================================================
+
 "NERD TREE
-"==============================
-" NERDTree defaults to showing hidden files.
+"============================================================================================================
+
+" defaults to showing hidden files.
 let NERDTreeShowHidden=1
 
 " Force NERDTree to default to this width (in columns)
@@ -200,6 +232,77 @@ let NERDTreeDirArrows=1
 
 let html_no_rendering=1 " Disable underlining of tabs in HTML documents.
 
+" END - NERD TREE
+"============================================================================================================
+
+" Syntastic plugin configuration.
+"===========================================================================================================
+
+let g:syntastic_aggregate_errors = 1
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+" :SyntasticToggleMode toggles Syntastic OFF the first time is is called, unless we force Syntastic ot default to 'passive' mode.
+let g:syntastic_mode_map = { 'mode': 'passive' }
+" Tell Syntastic to ignore `tidy` HTML syntax checker messages which contain any of the following strings.
+let g:syntastic_html_tidy_quiet_messages = { 'regex': [
+\'proprietary attribute',
+\'is not recognized!',
+\'discarding unexpected',
+\'<form> lacks "action" attribute',
+\'<input> attribute .\{-\} lacks value',
+\'lacks "src" attribute',
+\] }
+
+" Increase the default number of errors that tidy will display, because 6 is
+" just not enough for an AngularJS file riddled with invalid elements and
+" attributes.
+let g:syntastic_html_tidy_args = '--show-errors 1000'
+let g:syntastic_javascript_checkers = ['jshint']                " npm install -g jshint
+let g:syntastic_javascript_jshint_args = "--config ~/.jshintrc" "js_hint_options_are_here:  http://www.jshint.com/docs/options/
+let g:syntastic_json_checkers = ['jsonlint']                    " npm install -g jsonlint
+
+" Make Syntastic easier to use with a simple toggle command.
+" Closes location list automatically when Syntastic is toggled off.
+command! Lint execute "lcl | SyntasticToggleMode"
+nnoremap <leader>l :Lint<CR>
+
+" END -- Syntastic plugin configuration.
+"===========================================================================================================
+
+" vim-json (Propper json highlighting)
+"===========================================================================================================
+
+" Pretty-print JSON in the current buffer.
+" Will return an error if the JSON is malformed.
+" from: http://pascalprecht.github.io/2014/07/10/pretty-print-json-in-vim/
+command! JsonPrettyPrint :%!python -m json.tool
+
+" Disable key mappings.
+let g:vim_json_syntax_conceal = 0    " Disable syntax concealing (i.e. :setlocal conceallevel=0)
+
+" END - vim-json
+"===========================================================================================================
+
+"Tabbing
+"===========================================================================================================
+" size of a hard tabstop
+set tabstop=2
+
+" size of an 'indent'
+set shiftwidth=2
+
+" a combination of spaces and tabs are used to simulate tab stops at a width
+" other than the (hard)tabstop
+set softtabstop=2
+
+" make 'tab' insert indents instead of tabs at the beginning of a line
+set smarttab
+
+" always uses spaces instead of tab characters
+set expandtab
+
+retab "this will cause all previous tabs to be converted to spaces
+
 "Mapped Keys
 "===========================================================================================================
 
@@ -210,9 +313,7 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 
 let g:yankring_replace_n_pkey = '<C-M>'
 
-"imap <F6> <Esc>:NERDTreeToggle ~/projects/<CR>
 noremap <F6> :NERDTree ~/projects/<cr>
-"imap <F5> <Esc>:NERDTreeToggle<CR>
 noremap <F5> :NERDTree<cr>
 
 set backspace=2
@@ -220,8 +321,6 @@ set backspace=2
 "Location of ctags and window width
 let Tlist_Ctags_Cmd = "/usr/bin/ctags"
 let Tlist_WinWidth = 50
-"open c tags in new tab
-":nnoremap <silent><Leader><C-]> <C-w><C-]><C-w>T
 
 "Tab is 2 arrows? now it's one instead
 nnoremap > >>
@@ -247,26 +346,7 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-"Map cntl p to leader p
-"nnoremap <Leader>p :CtrlP pwd<cr>
-
-"Set tab to esc - :help index
-"inoremap <Tab> <Esc>
-"cnoremap <Tab> <C-c>
-"vnoremap <Tab> <Esc>
-"onoremap <Tab> <Esc>
-
-"Map control l to tab
-"inoremap <C-l> <Tab>
-"cnoremap <C-l> <Tab>
-"vnoremap <C-l> <Tab> 
-"onoremap <C-l> <Tab>
-
-"inoremap <S-C-l> <S-Tab>
-"cnoremap <S-C-l> <S-Tab>
-"vnoremap <S-C-l> <S-Tab> 
-"onoremap <S-C-l> <S-Tab>
-
+"Make the arrow keys not work to force the use of hjkl
 noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
@@ -282,70 +362,8 @@ augroup quickfix_preview
   autocmd BufWinEnter quickfix nnoremap <buffer> k k<CR>zz<C-w>p
 augroup END
 
-
-
-" Easy selection of the previously pasted text.
-" (We have to prevent YankRing from clobbering this mapping.)
-nnoremap gp `[v`]
-let g:yankring_paste_using_g = 0
-
-" Change default yankring cycle backwards/forwards through pasted text shortcut from
-" Ctrl+p to Command+p, and from Ctrl+n to Command+Shift+p.
-let g:yankring_replace_n_pkey = '<D-j>'
-let g:yankring_replace_n_nkey = '<D-k>'
-
-
-" Syntastic plugin configuration.
+" END - Mapped Keys
 "===========================================================================================================
-let g:syntastic_aggregate_errors = 1
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_mode_map = { 'mode': 'passive' } " :SyntasticToggleMode toggles Syntastic OFF the first time is is called, unless we force Syntastic ot default to 'passive' mode.
-let g:syntastic_javascript_checkers = ['jshint']
-let g:syntastic_javascript_jshint_args = "--config ~/bin/jshintrc" 
-"js_hint_options_are_here:  http://www.jshint.com/docs/options/
 
-let g:syntastic_json_checkers = ['jsonlint']                    " npm install -g jsonlint
-let g:syntastic_aggregate_errors = 1
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-
-" Pretty-print JSON in the current buffer.
-" Will return an error if the JSON is malformed.
-" From: http://pascalprecht.github.io/2014/07/10/pretty-print-json-in-vim/
-command! JsonPrettyPrint :%!python -m json.tool
-
- " Make Syntastic easier to use with a simple toggle command.  " Closes location list automatically when Syntastic is toggled off.
- command! Lint execute "lcl | SyntasticToggleMode"
-
-" =========================================
-" vim-json
-" =========================================
-
-" Disable key mappings.
-let g:vim_json_syntax_conceal = 0    " Disable syntax concealing (i.e. :setlocal conceallevel=0)
-
-
-"===========================================================================================================
-"Tabbing
-"===========================================================================================================
-" size of a hard tabstop
-set tabstop=2
-
-" size of an 'indent'
-set shiftwidth=2
-
-" a combination of spaces and tabs are used to simulate tab stops at a width
-" other than the (hard)tabstop
-set softtabstop=2
-
-" make "tab" insert indents instead of tabs at the beginning of a line
-set smarttab
-
-" always uses spaces instead of tab characters
-set expandtab
-
-retab "this will cause all previous tabs to be converted to spaces
-
-cd ~/projects
+"cd ~/projects
 
