@@ -155,6 +155,11 @@ set wildignore+=*/www/*                "Angular
 set wildignore+=*/dist/*               "Angular
 set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg,*.zip,*.rar,*.JPG,*.BMP,*.GIF,*.PNG,*.JPEG,*.ZIP,*.RAR
 
+" Bind Tab to Ctrl+N to make word autocompletion easier. Now it works like
+" Bash path name autocompletion.
+inoremap <Tab> <C-n>
+inoremap <S-Tab> <C-p>
+
 "Left for if I choose to use ctags again
 "Location of the tags file for ctags - to generate : ctags -R .
 "set tags=./tags,tags,~/projects/thegridto/application/tags,~/projects/cq5/tags,~projects/starauth/tags,~/projects/thegridto/
