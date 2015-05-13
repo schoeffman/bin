@@ -109,7 +109,7 @@ set hlsearch
 
 "If the gui is running settings
 if has("gui_running")
-  set guifont=Source\ Code\ Pro\:h14  "This can be overidden by the gui's settings
+  set guifont=Source\ Code\ Pro\ 12  "This can be overidden by the gui's settings
   set cursorline              " Turn on highlighting of current line.
 else
   "console only
