@@ -87,6 +87,12 @@ Bundle 'tomtom/tcomment_vim'
 "use :Dict to look up definitions / spelling of words
 Bundle 'szw/vim-dict'
 
+"Syntax highlighting for typescript
+Bundle 'leafgarland/typescript-vim'
+
+"Provides access to the Typescript Language Servce via command line server
+Bundle 'clausreinke/typescript-tools.vim'
+
 " END - Additional Plugins
 "============================================================================================================
 
