@@ -165,6 +165,7 @@ set wildignore+=*/bower_components/*   "Angular
 set wildignore+=*/node_modules/*       "Angular
 set wildignore+=*/www/*                "Angular
 set wildignore+=*/dist/*               "Angular
+set wildignore+=*/public/*             "Rails
 set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg,*.zip,*.rar,*.JPG,*.BMP,*.GIF,*.PNG,*.JPEG,*.ZIP,*.RAR
 
 " Bind Tab to Ctrl+N to make word autocompletion easier. Now it works like

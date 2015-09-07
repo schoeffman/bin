@@ -1,4 +1,4 @@
 #!/bin/bash
-encfs ~/bin/safe/ ~/bin/safe_open
+encfs ~/bin/safe/ ~/bin/openSafe
 
 
