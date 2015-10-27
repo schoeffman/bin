@@ -93,6 +93,8 @@ Bundle 'leafgarland/typescript-vim'
 "Provides access to the Typescript Language Servce via command line server
 Bundle 'clausreinke/typescript-tools.vim'
 
+"Ecma Script 6 sintax highlighting
+Bundle 'isRuslan/vim-es6'
 " END - Additional Plugins
 "============================================================================================================
 
