@@ -257,12 +257,22 @@ let html_no_rendering=1 " Disable underlining of tabs in HTML documents.
 
 " Syntastic plugin configuration.
 "===========================================================================================================
+"
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 let g:syntastic_aggregate_errors = 1
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-" :SyntasticToggleMode toggles Syntastic OFF the first time is is called, unless we force Syntastic ot default to 'passive' mode.
-let g:syntastic_mode_map = { 'mode': 'passive' }
+"" :SyntasticToggleMode toggles Syntastic OFF the first time is is called, unless we force Syntastic ot default to 'passive' mode.
+"let g:syntastic_mode_map = { 'mode': 'passive' }
+
 " Tell Syntastic to ignore `tidy` HTML syntax checker messages which contain any of the following strings.
 let g:syntastic_html_tidy_quiet_messages = { 'regex': [
 \'proprietary attribute',
@@ -273,18 +283,19 @@ let g:syntastic_html_tidy_quiet_messages = { 'regex': [
 \'lacks "src" attribute',
 \] }
 
-" Increase the default number of errors that tidy will display, because 6 is
-" just not enough for an AngularJS file riddled with invalid elements and
-" attributes.
+"
+"" Increase the default number of errors that tidy will display, because 6 is
+"" just not enough for an AngularJS file riddled with invalid elements and
+"" attributes.
 let g:syntastic_html_tidy_args = '--show-errors 1000'
 let g:syntastic_javascript_checkers = ['jshint']                " npm install -g jshint
 let g:syntastic_javascript_jshint_args = "--config ~/.jshintrc" "js_hint_options_are_here:  http://www.jshint.com/docs/options/
 let g:syntastic_json_checkers = ['jsonlint']                    " npm install -g jsonlint
-
-" Make Syntastic easier to use with a simple toggle command.
-" Closes location list automatically when Syntastic is toggled off.
-command! Lint execute "lcl | SyntasticToggleMode"
-nnoremap <leader>l :Lint<CR>
+"
+"" Make Syntastic easier to use with a simple toggle command.
+"" Closes location list automatically when Syntastic is toggled off.
+"command! Lint execute "lcl | SyntasticToggleMode"
+"nnoremap <leader>l :Lint<CR>
 
 " END -- Syntastic plugin configuration.
 "===========================================================================================================
