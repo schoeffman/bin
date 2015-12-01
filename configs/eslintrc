@@ -1,13 +1,26 @@
 {
-    "parser": "babel-eslint",
-    "env": {
-        "browser": true,
-        "node": true
-    },
-    "settings": {
-        "ecmascript": 6
-    },
-    "rules": {
-        "strict": 0 // you can add more rules if you want
-    }
+  "ecmaFeatures": {
+    "jsx": true,
+    "modules": true
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "parser": "babel-eslint",
+  "rules": {
+    "quotes": [2, "single"],
+    "strict": [2, "never"],
+    "react/jsx-uses-react": 2,
+    "react/jsx-uses-vars": 2,
+    "react/react-in-jsx-scope": 2,
+    "prefer-const": 0,
+    "react/prefer-const": 0
+  },
+  "plugins": [
+    "react"
+  ],
+  "globals": {
+    "React": true
+  }
 }

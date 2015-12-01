@@ -28,7 +28,8 @@ Bundle 'gmarik/Vundle.vim'
 "============================================================================================================
 
 "Solarized colour pallete
-Bundle 'altercation/vim-colors-solarized'
+"http://bytefluent.com/vivify/
+Bundle 'flazz/vim-colorschemes'
 
 "File fuzzy search to navigate projects
 Bundle 'kien/ctrlp.vim'                      
@@ -95,6 +96,9 @@ Bundle 'clausreinke/typescript-tools.vim'
 
 "Ecma Script 6 sintax highlighting
 Bundle 'isRuslan/vim-es6'
+
+"Status line for vim files
+Bundle 'bling/vim-airline'
 " END - Additional Plugins
 "============================================================================================================
 
@@ -188,6 +192,7 @@ inoremap <S-Tab> <C-p>
 let g:solarized_termtrans = 1
 set background=dark
 colorscheme solarized
+"colorscheme candyman
 
 
 " End - Solarized 
@@ -290,7 +295,7 @@ let g:syntastic_html_tidy_quiet_messages = { 'regex': [
 let g:syntastic_html_tidy_args = '--show-errors 1000'
 let g:syntastic_javascript_checkers = ['jshint']                " npm install -g jshint
 let g:syntastic_javascript_checkers = ['eslint']                " npm install -g eslint babel-eslint 
-let g:syntastic_javascript_jshint_args = "--config ~/.jshintrc" "js_hint_options_are_here:  http://www.jshint.com/docs/options/
+"let g:syntastic_javascript_jshint_args = "--config ~/.jshintrc" "js_hint_options_are_here:  http://www.jshint.com/docs/options/
 let g:syntastic_json_checkers = ['jsonlint']                    " npm install -g jsonlint
 
 "" Make Syntastic easier to use with a simple toggle command.
@@ -359,6 +364,9 @@ nnoremap > >>
 nnoremap < <<
 
 " Add keyboard shortcuts - map is recursive and noremap is not recursive
+
+"open my vimrc
+noremap <Leader>v :tabnew ~/.vimrc<CR>
 
 "Move through tabs
 noremap <Leader>. gt
