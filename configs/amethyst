@@ -1,28 +1,25 @@
 {
-LAYOUTS: "----------------------",
 layouts: [
 "tall",
 "wide",
 "fullscreen",
 "column"
 ],
-MODIFIERS: "----------------------",
 Valid modifiers are: [
-"option",
-"shift",
-"control",
-"command"
+  "option",
+  "shift",
+  "control",
+  "command"
 ],
 mod1: [
-"option",
-"shift"
+  "option",
+  "shift"
 ],
 mod2: [
-"option",
-"shift",
-"control"
+  "option",
+  "shift",
+  "control"
 ],
-COMMANDS: "----------------------",
 Commands are: {
 cycle-layout: "Cycle layout to the next layout",
 cycle-layout-backward: "Cycle layout to the previous layout",
