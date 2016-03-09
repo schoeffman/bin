@@ -535,11 +535,13 @@
 	<key>NSTableView Sort Ordering KeyBingingTable</key>
 	<array/>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>2276 -123 678 234 1280 -640 2560 1417 </string>
+	<string>602 37 678 234 0 0 1280 777 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>1632 -65 924 485 1280 -640 2560 1417 </string>
+	<string>352 575 924 485 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 15 640 762 0 0 1280 777 </string>
+	<string>895 18 1274 1376 0 0 2560 1417 </string>
+	<key>NeverWarnAboutShortLivedSessions_E3EE8454-CE35-42AD-9741-B34E0DAFCB25</key>
+	<true/>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -760,7 +762,7 @@
 			<key>Custom Command</key>
 			<string>No</string>
 			<key>Custom Directory</key>
-			<string>No</string>
+			<string>Recycle</string>
 			<key>Default Bookmark</key>
 			<string>No</string>
 			<key>Disable Printing</key>
@@ -1271,7 +1273,7 @@
 	<key>NoSyncTimeOfLastPromo</key>
 	<real>473818969.35225499</real>
 	<key>NoSyncTimeOfLastPromoDownload</key>
-	<real>474762230.44814098</real>
+	<real>476908294.34544301</real>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
 	<key>OpenArrangementAtStartup</key>
@@ -1334,7 +1336,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-01-20T05:21:57Z</date>
+	<date>2016-02-11T20:55:36Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -1373,6 +1375,10 @@
 	<integer>0</integer>
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
+	<key>findIgnoreCase_iTerm</key>
+	<true/>
+	<key>findRegex_iTerm</key>
+	<false/>
 	<key>iTerm Version</key>
 	<string>2.1.4</string>
 </dict>
